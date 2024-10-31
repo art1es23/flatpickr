@@ -1011,16 +1011,16 @@ function FlatpickrInstance(
         self.l10n.monthAriaLabel
       );
 
-      bind(self.monthsDropdownContainer, "change", (e: Event) => {
-        const target = getEventTarget(e) as HTMLSelectElement;
-        const selectedMonth = parseInt(target.value, 10);
+      if (self.config?.clickOnInactiveDays) {
+        bind(self.monthsDropdownContainer, "change", (e: Event) => {
+          const target = getEventTarget(e) as HTMLSelectElement;
+          const selectedMonth = parseInt(target.value, 10);
 
-        if (self.config?.clickOnInactiveDays) {
           self.changeMonth(selectedMonth - self.currentMonth);
 
           triggerEvent("onMonthChange");
-        }
-      });
+        });
+      }
 
       buildMonthSwitch();
 
