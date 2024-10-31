@@ -87,7 +87,7 @@ export interface BaseOptions {
   /*
     Preventing change month after click on inactive days
   */
-  clickOnInactiveDays: boolean;
+  shouldChangeMonth: boolean;
 
   /* Whether calendar should close after date selection */
   closeOnSelect: boolean;
@@ -292,7 +292,7 @@ export interface ParsedOptions {
   ariaDateFormat: string;
   autoFillDefaultTime: boolean;
   clickOpens: boolean;
-  clickOnInactiveDays: boolean;
+  shouldChangeMonth: boolean;
   closeOnSelect: boolean;
   conjunction: string;
   dateFormat: string;
@@ -360,7 +360,7 @@ export const defaults: ParsedOptions = {
   ariaDateFormat: "F j, Y",
   autoFillDefaultTime: true,
   clickOpens: true,
-  clickOnInactiveDays: true,
+  shouldChangeMonth: true,
   closeOnSelect: true,
   conjunction: ", ",
   dateFormat: "Y-m-d",

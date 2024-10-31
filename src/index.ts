@@ -2336,12 +2336,18 @@ function FlatpickrInstance(
       target.dateObj.getTime()
     ));
 
-    const shouldChangeMonth =
-      self.config?.clickOnInactiveDays ||
-      ((selectedDate.getMonth() < self.currentMonth ||
+    let shouldChangeMonth =
+      (selectedDate.getMonth() < self.currentMonth ||
         selectedDate.getMonth() >
           self.currentMonth + self.config.showMonths - 1) &&
-        self.config.mode !== "range");
+      self.config.mode !== "range";
+
+    if (
+      self.config?.shouldChangeMonth !== undefined &&
+      !self.config.shouldChangeMonth
+    ) {
+      shouldChangeMonth = false;
+    }
 
     self.selectedDateElem = target;
 
