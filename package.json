@@ -53,6 +53,12 @@
   },
   "main": "dist/flatpickr.js",
   "module": "dist/esm/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/flatpickr.js",
+      "require": "./dist/esm/index.js"
+    }
+  },
   "style": "dist/flatpickr.css",
   "types": "./dist/typings.d.ts",
   "repository": {
