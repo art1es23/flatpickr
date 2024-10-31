@@ -24,7 +24,7 @@ export var defaults = {
     ariaDateFormat: "F j, Y",
     autoFillDefaultTime: true,
     clickOpens: true,
-    clickOnInactiveDays: true,
+    shouldChangeMonth: true,
     closeOnSelect: true,
     conjunction: ", ",
     dateFormat: "Y-m-d",

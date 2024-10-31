@@ -87,7 +87,7 @@
       ariaDateFormat: "F j, Y",
       autoFillDefaultTime: true,
       clickOpens: true,
-      shouldChangeMonth: false,
+      shouldChangeMonth: true,
       closeOnSelect: true,
       conjunction: ", ",
       dateFormat: "Y-m-d",
@@ -348,4 +348,3 @@
   return minMaxTimePlugin;
 
 })));
-//# sourceMappingURL=minMaxTimePlugin.js.map

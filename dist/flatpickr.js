@@ -65,7 +65,7 @@
         ariaDateFormat: "F j, Y",
         autoFillDefaultTime: true,
         clickOpens: true,
-        shouldChangeMonth: false,
+        shouldChangeMonth: true,
         closeOnSelect: true,
         conjunction: ", ",
         dateFormat: "Y-m-d",
@@ -2206,7 +2206,6 @@
             if (!((_a = self.config) === null || _a === void 0 ? void 0 : _a.shouldChangeMonth)) {
                 shouldChangeMonth = false;
             }
-            console.log(shouldChangeMonth);
             self.selectedDateElem = target;
             if (self.config.mode === "single")
                 self.selectedDates = [selectedDate];
@@ -2723,4 +2722,3 @@
     return flatpickr;
 
 })));
-//# sourceMappingURL=flatpickr.js.map

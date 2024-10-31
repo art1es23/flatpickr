@@ -102,4 +102,3 @@
     return confirmDatePlugin;
 
 })));
-//# sourceMappingURL=confirmDate.js.map

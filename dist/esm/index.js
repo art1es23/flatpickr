@@ -1544,11 +1544,13 @@ function FlatpickrInstance(element, instanceConfig) {
             return;
         var target = t;
         var selectedDate = (self.latestSelectedDateObj = new Date(target.dateObj.getTime()));
-        var shouldChangeMonth = ((_a = self.config) === null || _a === void 0 ? void 0 : _a.clickOnInactiveDays) ||
-            ((selectedDate.getMonth() < self.currentMonth ||
-                selectedDate.getMonth() >
-                    self.currentMonth + self.config.showMonths - 1) &&
-                self.config.mode !== "range");
+        var shouldChangeMonth = (selectedDate.getMonth() < self.currentMonth ||
+            selectedDate.getMonth() >
+                self.currentMonth + self.config.showMonths - 1) &&
+            self.config.mode !== "range";
+        if (!((_a = self.config) === null || _a === void 0 ? void 0 : _a.shouldChangeMonth)) {
+            shouldChangeMonth = false;
+        }
         self.selectedDateElem = target;
         if (self.config.mode === "single")
             self.selectedDates = [selectedDate];

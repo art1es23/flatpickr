@@ -21,7 +21,7 @@ export interface BaseOptions {
     ariaDateFormat: string;
     autoFillDefaultTime: boolean;
     clickOpens: boolean;
-    clickOnInactiveDays: boolean;
+    shouldChangeMonth: boolean;
     closeOnSelect: boolean;
     conjunction: string;
     dateFormat: string;
@@ -93,7 +93,7 @@ export interface ParsedOptions {
     ariaDateFormat: string;
     autoFillDefaultTime: boolean;
     clickOpens: boolean;
-    clickOnInactiveDays: boolean;
+    shouldChangeMonth: boolean;
     closeOnSelect: boolean;
     conjunction: string;
     dateFormat: string;
