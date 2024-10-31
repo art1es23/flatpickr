@@ -1139,8 +1139,7 @@
                 ? current
                 : dayFocused
                     ? activeElement
-                    : self.selectedDateElem !== undefined &&
-                        isInView(self.selectedDateElem)
+                    : self.selectedDateElem !== undefined && isInView(self.selectedDateElem)
                         ? self.selectedDateElem
                         : self.todayDateElem !== undefined && isInView(self.todayDateElem)
                             ? self.todayDateElem
@@ -1417,10 +1416,7 @@
             };
         }
         function changeMonth(value, isOffset) {
-            var _a;
             if (isOffset === void 0) { isOffset = true; }
-            if (!((_a = self.config) === null || _a === void 0 ? void 0 : _a.clickOnInactiveDays))
-                return;
             var delta = isOffset ? value : value - self.currentMonth;
             if ((delta < 0 && self._hidePrevMonthArrow === true) ||
                 (delta > 0 && self._hideNextMonthArrow === true))
@@ -1919,8 +1915,7 @@
         }
         function minMaxDateSetter(type) {
             return function (date) {
-                var dateObj = (self.config["_" + type + "Date"] =
-                    self.parseDate(date, self.config.dateFormat));
+                var dateObj = (self.config["_" + type + "Date"] = self.parseDate(date, self.config.dateFormat));
                 var inverseDateObj = self.config["_" + (type === "min" ? "max" : "min") + "Date"];
                 if (dateObj !== undefined) {
                     self[type === "min" ? "minDateHasTime" : "maxDateHasTime"] =
@@ -2190,6 +2185,7 @@
             }
         }
         function selectDate(e) {
+            var _a;
             e.preventDefault();
             e.stopPropagation();
             var isSelectable = function (day) {
@@ -2203,10 +2199,11 @@
                 return;
             var target = t;
             var selectedDate = (self.latestSelectedDateObj = new Date(target.dateObj.getTime()));
-            var shouldChangeMonth = (selectedDate.getMonth() < self.currentMonth ||
-                selectedDate.getMonth() >
-                    self.currentMonth + self.config.showMonths - 1) &&
-                self.config.mode !== "range";
+            var shouldChangeMonth = ((_a = self.config) === null || _a === void 0 ? void 0 : _a.clickOnInactiveDays) ||
+                ((selectedDate.getMonth() < self.currentMonth ||
+                    selectedDate.getMonth() >
+                        self.currentMonth + self.config.showMonths - 1) &&
+                    self.config.mode !== "range");
             self.selectedDateElem = target;
             if (self.config.mode === "single")
                 self.selectedDates = [selectedDate];
