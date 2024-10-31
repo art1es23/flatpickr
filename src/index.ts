@@ -499,6 +499,8 @@ function FlatpickrInstance(
    * @param {boolean} triggerChange if change events should be triggered
    */
   function jumpToDate(jumpDate?: DateOption, triggerChange?: boolean) {
+    if (!self.config?.shouldChangeMonth) return;
+
     const jumpTo =
       jumpDate !== undefined
         ? self.parseDate(jumpDate)

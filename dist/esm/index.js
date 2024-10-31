@@ -316,6 +316,9 @@ function FlatpickrInstance(element, instanceConfig) {
         }
     }
     function jumpToDate(jumpDate, triggerChange) {
+        var _a;
+        if (!((_a = self.config) === null || _a === void 0 ? void 0 : _a.shouldChangeMonth))
+            return;
         var jumpTo = jumpDate !== undefined
             ? self.parseDate(jumpDate)
             : self.latestSelectedDateObj ||
