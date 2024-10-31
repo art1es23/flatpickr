@@ -2342,10 +2342,7 @@ function FlatpickrInstance(
           self.currentMonth + self.config.showMonths - 1) &&
       self.config.mode !== "range";
 
-    if (
-      self.config?.shouldChangeMonth !== undefined &&
-      !self.config.shouldChangeMonth
-    ) {
+    if (!self.config?.shouldChangeMonth) {
       shouldChangeMonth = false;
     }
 
